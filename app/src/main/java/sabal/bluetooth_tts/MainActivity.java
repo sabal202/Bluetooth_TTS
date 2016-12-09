@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
                     if ((device.getName() != null) && (device.getName().length() > 0)) {
                         all += device.getName() + " : " + device.getAddress() + " : " + device.getType() + " : " + new Date(System.currentTimeMillis()).getHours()+ ":" + new Date(System.currentTimeMillis()).getMinutes() + "\n";
                         //Toast.makeText(MainActivity.this, "Сосканировало", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(MainActivity.this, device.getName() + "     " + device.getAddress(), Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this, device.getName() + "     " + device.getAddress(), Toast.LENGTH_LONG).show();
                         TextView tw = (TextView) findViewById(R.id.textview);
                         tw.setText(all);
                         int c = isInWL(device.getAddress());
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         // TODO Auto-generated method stub
         if (status == TextToSpeech.SUCCESS) {
 
-            Locale locale = new Locale("ru", "en");
+            Locale locale = new Locale("ru");
 
             int result = mTTS.setLanguage(locale);
             //int result = mTTS.setLanguage(Locale.getDefault());
